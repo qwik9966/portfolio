@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+        <title>Lukáš Batěk</title>
+    </head>
+    <body>
+        
+        <!-- Mobilní hamburger menu -->
+        <div id="mobile-button" class="mobile-menu-box">
+            <div class="mobile-menu-icon"></div>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="nav-button-container-mobile">
+                <a href="index.html" class="nav-button-mobile">Úvod</a>
+                <a class="nav-button-mobile-selected">Koníčky</a>
+                <a href="media.html" class="nav-button-mobile">Média</a>
+            </div>
+        </div>
+
+        <!-- Custom cursor a podsvícení -->
+        <div id=cursor class="cursor"></div>
+        <div id="HeropageBackground" class="heropage-background-color"></div>
+        <div class="heropage-background"></div>
+
+        <header id="header">
+            <a href="index.html" class="nav-button">Úvod</a>
+            <a class="nav-button nav-button-selected">Koníčky</a>
+            <a href="media.html" class="nav-button">Média</a>
+        </header>
+
+        <section id="web-start" class="zajmy-section">
+            <!-- Boxy s koníčky -->
+            <div class="konicky-container">
+                <div class="disable-aos" data-aos-duration="1000" data-aos="fade-right" >
+                    <div class="konicky-box konicky-box-big">
+                        <div class="konicky-box-title-container">
+                            <p class="title-number">01</p>
+                            <p class="title-name">ASTRONOMIE</p>
+                            <i class="hobby-title-icons astro-icon"></i>
+                        </div>
+                        
+                        <div class="hobby-img-container">
+                            <img src="img/Astro/Orion.JPG" class="hobby-img">
+                            <img src="img/Astro/M33.JPG" class="hobby-img">
+                            <img src="img/Astro/M42.JPG" class="hobby-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="disable-aos" data-aos-duration="1000" data-aos="fade-right" >
+                    <div class="konicky-box">
+                        <div class="konicky-box-title-container">
+                            <p class="title-number">02</p>
+                            <p class="title-name">SKAUTING</p>
+                            <i class="hobby-title-icons scouting-icon"></i>
+                        </div>
+                        
+                        <div class="hobby-img-container">
+                            <img src="img/Skaut/Skaut.jpg" class="hobby-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="disable-aos" data-aos-duration="1000" data-aos="fade-left" >
+                    <div class="konicky-box">
+                        <div class="konicky-box-title-container">
+                            <p class="title-number">03</p>
+                            <p class="title-name">CESTOVÁNÍ</p>
+                            <i class="hobby-title-icons traveling-icon"></i>
+                        </div>
+                        <div class="hobby-img-container">
+                            <img src="img/Cestovani/fatra.jpg" class="hobby-img">
+                            <img src="img/Cestovani/canyon.jpg" class="hobby-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="disable-aos" data-aos-duration="1000" data-aos="fade-left" >
+                    <div class="konicky-box konicky-box-big">    
+                        <div class="konicky-box-title-container">
+                            <p class="title-number">04</p>
+                            <p class="title-name">AMATÉRSKÉ RÁDIO</p>
+                            <i class="hobby-title-icons radio-icon"></i>
+                        </div>
+                        <div class="hobby-img-container">
+                            <img src="img/Radio/Spectrun.PNG" class="hobby-img">
+                            <img src="img/Radio/SSTV3.PNG" class="hobby-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            
+            <div class="footer-horizontal">
+                <div class="footer-odkazy-container">
+                    <p class="footer-odkazy-title">Rychlé odkazy</p>
+                    <a href="index.html" class="footer-odkazy">Úvod</a>
+                    <a class="footer-odkazy">Koníčky</a>
+                    <a href="media.html" class="footer-odkazy">Média</a>
+                </div>
+                
+                <a href="#web-start" class="back-to-top">Zpátky nahoru <i class="arrow-up-icon"></i></a>
+            </div>
+            
+            <p class="footer-copyright"><span class="gray">@ 2026</span> Lukáš Batěk. <span class="gray">Všechna práva vyhrazena</span></p>
+        </footer>
+        
+        <script src="js/menu.js"></script>
+        <script src="js/dock.js"></script>
+        <script src="js/mousefollow.js"></script>
+        <script src="js/aos-fix.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </body>
+</html>

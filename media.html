@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+        <title>Lukáš Batěk</title>
+    </head>
+    <body>
+        
+        <!-- Mobilní hamburger menu -->
+        <div id="mobile-button" class="mobile-menu-box">
+            <div class="mobile-menu-icon"></div>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="nav-button-container-mobile">
+                <a href="index.html" class="nav-button-mobile">Úvod</a>
+                <a href="konicky.html" class="nav-button-mobile">Koníčky</a>
+                <a class="nav-button-mobile-selected">Média</a>
+            </div>
+        </div>
+
+        <!-- Custom cursor a podsvícení -->
+        <div id=cursor class="cursor"></div>
+        <div id="HeropageBackground" class="heropage-background-color"></div>
+        <div class="heropage-background"></div>
+
+        <header id="header">
+            <a href="index.html" class="nav-button">Úvod</a>
+            <a href="konicky.html" class="nav-button">Koníčky</a>
+            <a class="nav-button nav-button-selected">Média</a>
+        </header>
+
+        <section id="web-start" class="media-section">
+            <!-- Boxy s oblíbenými média -->
+            <div class="media-container">
+                <div class="disable-aos" data-aos-duration="1000" data-aos="fade-right" >
+                    <div class="media-box media-box-big">
+                        <div class="media-box-title-container">
+                            <p class="title-number">01</p>
+                            <p class="title-name">OBLÍBENÉ HRY</p>
+                            <i class="hobby-title-icons gaming-icon"></i>
+                        </div>
+                        
+                        <div class="media-img-container">
+                            <img src="img/GameCoverArt/detroit.jpg" class="media-img">
+                            <img src="img/GameCoverArt/farcry3.jpg" class="media-img">
+                            <img src="img/GameCoverArt/portal2.jpg" class="media-img">
+                            <img src="img/GameCoverArt/satisfactory.jpg" class="media-img">
+                            <img src="img/GameCoverArt/subnautica.jpg" class="media-img">
+                            <img src="img/GameCoverArt/forest.jpg" class="media-img">
+                            <img src="img/GameCoverArt/minecraft.jpg" class="media-img">
+                            <img src="img/GameCoverArt/lifeisstrange.png" class="media-img">
+                            <img src="img/GameCoverArt/metro.jpg" class="media-img">
+                            <img src="img/GameCoverArt/kerbal.jpg" class="media-img">
+                            <img src="img/GameCoverArt/silksong.jpg" class="media-img">
+                            <img src="img/GameCoverArt/halflife2.jpg" class="media-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="disable-aos" data-aos-duration="1000" data-aos="fade-left" >
+                    <div class="media-box media-box-big disabled">    
+                        <div class="media-box-title-container">
+                            <p class="title-number">02</p>
+                            <p class="title-name">OBLÍBENÉ FILMY/SERIÁLY</p>
+                            <i class="hobby-title-icons film-icon"></i>
+                        </div>
+                        <div class="media-img-container">
+                            <img src="img/Filmy/interstellar.webp" class="media-img">
+                            <img src="img/Filmy/breakingbad.webp" class="media-img">
+                            <img src="img/Filmy/deathnote.jpg" class="media-img">
+                            <img src="img/Filmy/oppenheimer.jpg" class="media-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            
+            <div class="footer-horizontal">
+                <div class="footer-odkazy-container">
+                    <p class="footer-odkazy-title">Rychlé odkazy</p>
+                    <a href="index.html" class="footer-odkazy">Úvod</a>
+                    <a href="konicky.html" class="footer-odkazy">Koníčky</a>
+                    <a class="footer-odkazy">Média</a>
+                </div>
+                
+                <a href="#web-start" class="back-to-top">Zpátky nahoru <i class="arrow-up-icon"></i></a>
+            </div>
+            
+            <p class="footer-copyright"><span class="gray">@ 2026</span> Lukáš Batěk. <span class="gray">Všechna práva vyhrazena</span></p>
+        </footer>
+        
+        <script src="js/menu.js"></script>
+        <script src="js/box-open.js"></script>
+        <script src="js/dock.js"></script>
+        <script src="js/mousefollow.js"></script>
+        <script src="js/aos-fix.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </body>
+</html>

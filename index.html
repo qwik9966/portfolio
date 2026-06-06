@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+        <title>Lukáš Batěk</title>
+    </head>
+    <body>
+        <!-- Načítací stránka -->
+        <div id="loadingpage" class="loadingpage">
+            <div class="loadingpage-dots-container">
+            <div id="dot1" class="dot"></div>
+            <div id="dot2" class="dot"></div>
+            <div id="dot3" class="dot"></div>
+            </div>
+        </div>
+        
+        <!-- Hlavní stránka -->
+        <div id="mainpage" class="mainpage">
+        
+        <!-- Mobilní hamburger menu -->
+        <div id="mobile-button" class="mobile-menu-box">
+            <div class="mobile-menu-icon"></div>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="nav-button-container-mobile">
+                <a class="nav-button-mobile-selected">Úvod</a>
+                <a href="konicky.html" class="nav-button-mobile">Koníčky</a>
+                <a href="media.html" class="nav-button-mobile">Média</a>
+            </div>
+        </div>
+
+        <!-- Custom cursor a podsvícení -->
+        <div id=cursor class="cursor"></div>
+        <div id="HeropageBackground" class="heropage-background-color"></div>
+        <div class="heropage-background"></div>
+
+        <header id="header">
+            <a class="nav-button nav-button-selected">Úvod</a>
+            <a href="konicky.html" class="nav-button">Koníčky</a>
+            <a href="media.html" class="nav-button">Média</a>
+        </header>
+
+
+        <!-- Heropage -->
+        <section id="web-start" class="heropage">
+            <div class="heropage-uvod-container">
+                <div class="heropage-title-container" data-aos-duration="1000" data-aos="fade-right" >
+                    <p class="heropage-title">Ahoj, jmenuji se <span style="color: #f32c2c; font-weight: 700">Lukáš Batěk</span></p>
+                </div>
+                <div data-aos-duration="1000" data-aos="fade-left">
+                    <p class="heropage-podnadpis">Vítej na mém portfóliu</p>
+                </div>
+            </div>
+            
+            <div data-aos-duration="1000" data-aos="fade-up" class="arrowdown-container">
+                <i class="arrowdown-icon"></i>
+            </div>
+        </section>
+
+        <!-- Info boxy -->
+        <section class="info-section">
+            <div data-aos-duration="1000" data-aos="fade-up" >
+                <div class="about-me-box">
+                    <div data-aos-duration="1000" data-aos="fade-right" class="about-me-inner-box inner-box-large disable-aos">
+                        <p class="title-inner-box">STUDUJI NA</p>
+                        <p class="content-inner-box">Creative Hill College</p>
+                    </div>
+                    <div data-aos-duration="1000" data-aos-delay="100" data-aos="fade-left" class="about-me-inner-box disable-aos">
+                        <p class="title-inner-box">VYUŽÍVÁM</p>
+                        <div class="inner-box-icons-container">
+                            <i class="inner-box-icons html-icon"></i>
+                            <i class="inner-box-icons css-icon"></i>
+                            <i class="inner-box-icons js-icon"></i>
+                            <i class="inner-box-icons python-icon"></i>
+                            <p class="csharp-text">C#</p>
+                            <i class="inner-box-icons unity-icon"></i>
+                        </div>
+                    </div>
+                    <div data-aos-duration="1000" data-aos-delay="200" data-aos="fade-right" class="about-me-inner-box disable-aos">
+                        <p class="title-inner-box">ZÁJMY</p>
+                        <div class="inner-box-icons-container hobby-container">
+                            <i class="inner-box-icons astro-icon hobby-icons"></i>
+                            <i class="inner-box-icons radio-icon hobby-icons"></i>
+                            <i class="inner-box-icons scouting-icon hobby-icons"></i>
+                            <i class="inner-box-icons traveling-icon hobby-icons"></i>
+                            <i class="inner-box-icons programming-icon hobby-icons"></i>
+                            <i class="inner-box-icons gaming-icon hobby-icons"></i>
+                        </div>
+                    </div>
+                    <div data-aos-duration="1000" data-aos-delay="300" data-aos="fade-left" class="about-me-inner-box inner-box-large world-map disable-aos">
+                        <p class="location-text">ČESKÁ REPUBLIKA</p>
+                        <div class="timezone-container">
+                            <div class="green-circle"></div>
+                            <p class="timezone-text">GMT+2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-aos-duration="900" data-aos="fade-up">
+                <div data-aos-duration="1000" data-aos="fade-up">
+                    <div class="info-box">
+                        <p class="info-box-text info-box-start">NĚCO O MĚ</p>
+                        <div class="info-box-line"></div>
+                        <p class="title info-box-text info-box-title">Jsem Lukáš Batěk, <span class="red">vývojář</span> a taky amatérský <span class="red">astronom</span>.</p>
+                        <p class="info-box-text info-box-maintext">Baví mě objevovat, jak věci fungují, a propojovat kód s designem. Většinu času se pohybuji ve frontendu, ale aktivně se učím pracovat i s backendem. 
+                            Nejvíce pracuji s HTML, CSS, JavaScriptem a také C#. Mám radost z každého hotového projektu, což mě posouvá dál a dál.
+                            <br>
+                            <br>
+                            Snažím se každý den posunout aspoň o kousek dál a naučit se něco nového.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+            
+
+        <!-- Kontaktní formulář -->
+        <section class="contact-section">
+            
+            <p data-aos-duration="900" data-aos="fade-down" class="contact-text">Kontaktuj mě</p>
+            
+            <form data-aos-duration="900" data-aos="fade-up" class="form-container" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="88fc7d27-bc59-4ecf-9006-37bbde5ee6e1">
+                <input class="name-input" type="text" name="name" placeholder="Jméno" required>
+                <input class="name-input" type="email" name="email" placeholder="E-mail" required>
+                <textarea class="message-input" name="message" placeholder="Napište mi zprávu..." required></textarea>
+                <button class="send-button" type="submit">Odeslat  <span class="send-icon-background"> <i class="send-icon"></i> </span> </button>
+            </form>
+        </section>
+            
+        <footer>
+            
+            <div class="footer-horizontal">
+                <div class="footer-odkazy-container">
+                    <p class="footer-odkazy-title">Rychlé odkazy</p>
+                    <a class="footer-odkazy">Úvod</a>
+                    <a href="konicky.html" class="footer-odkazy">Koníčky</a>
+                    <a href="media.html" class="footer-odkazy">Média</a>
+                </div>
+                
+                <a href="#web-start" class="back-to-top">Zpátky nahoru <i class="arrow-up-icon"></i></a>
+            </div>
+            
+            <p class="footer-copyright"><span class="gray">@ 2026</span> Lukáš Batěk. <span class="gray">Všechna práva vyhrazena</span></p>
+        </footer>
+        </div>
+        
+        <script src="js/menu.js"></script>
+        <script src="js/dock.js"></script>
+        <script src="js/mousefollow.js"></script>
+        <script src="js/loadingscreen.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </body>
+</html>

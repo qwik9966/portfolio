@@ -1,0 +1,1597 @@
+/*Nastavení celého webu*/
+
+body, html  {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    cursor: none;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #222222 #000000;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #222222;
+    border-radius: 100px;
+    border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #444444;
+}
+
+/*Načítání*/
+
+.mainpage{
+    display: none;
+}
+
+.loadingpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100dvw;
+    transition: 1s;
+    position: fixed;
+}
+
+.loadingpage-dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+}
+
+.loadingpage-active {
+    opacity: 0;
+}
+
+.dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.dot-active {
+    background-color: rgb(100, 100, 100);
+    scale: 1.25;
+}
+
+/*Navigační header*/
+
+header {
+    z-index: 9998;
+    height: 60px;
+    width: 30dvw;
+    background-color: #3f3f3f4a;
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    position: fixed;
+    border-top: solid 1px #313131;
+    border-left: solid 1px #313131;
+    border-right: solid 1px #313131;
+    margin: 20px auto;
+    left: 0;
+    right: 0;
+    transition: translate 0.5s, border 0.5s, box-shadow 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+p {
+    font-family: "DM Sans";
+    color: white;
+    font-size: 1.25rem;
+    z-index: 1;
+    font-weight: 400;
+}
+
+.red {
+    color: #f32c2c;
+}
+
+.title {
+    font-size: 2.5rem;
+}
+
+header:hover {
+    border-top: solid 1px #3f3f3f;
+    border-left: solid 1px #3f3f3f;
+    border-right: solid 1px #3f3f3f;
+    box-shadow:  0 0 80px rgba(50, 50, 50, 0.2);
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: -20px; 
+    left: 0;
+    right: 0;
+    bottom: -40px;
+    background: transparent;
+    pointer-events: auto;
+    z-index: -1;
+}
+
+.header-hidden {
+    translate: 0 -70px;
+}
+
+.header-hidden:hover {
+    translate: 0 0;
+}
+
+.nav-button {
+    color: white;
+    font-family: "DM Sans";
+    font-size: 1.25rem;
+    padding: 9px;
+    border-radius: 40px;
+    width: 75px;
+    text-align: center;
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: none;
+}
+
+.nav-button:hover {
+    background-color: #53535353;
+}
+
+.nav-button-selected {
+    background-color: #87878753;
+}
+
+/*Mobilní navigační menu*/
+
+.mobile-menu-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    background-color: #3f3f3f4a;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.mobile-menu-box-active {
+    background-color: #f32c2c;
+}
+
+.mobile-menu-icon {
+    background-image: url('img/menu.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+}
+
+.mobile-menu {
+    width: 35dvw;
+    height: 100%;
+    background-color: #3f3f3f4a;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    transform: translateX(-100%);
+    top: 0;
+    z-index: 9999;
+    transition: 0.5s;
+    display: flex;
+    margin-top: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    border: solid 1px #202020;
+}
+
+.mobile-menu-active {
+    transform: translateX(0);
+    height: 95%;
+    transform: translateY(2.5%);
+    margin-left: 20px;
+}
+
+.nav-button-mobile {
+    color: white;
+    font-family: "DM Sans";
+    font-weight: 550;
+    padding: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+    text-align: center;
+    font-size: 2rem;
+    align-self: center;
+}
+
+.nav-button-mobile-selected {
+    color: #f32c2c;
+    font-family: "DM Sans";
+    font-weight: 550;
+    padding: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+    text-align: center;
+    font-size: 2rem;
+    align-self: center;
+}
+
+.nav-title-mobile {
+    color: white;
+    font-family: "DM Sans";
+    font-weight: 600;
+    font-size: 2.25rem;
+    text-align: center;
+    flex: 0;
+}
+
+.nav-button-container-mobile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    align-self: center;
+}
+
+
+.heropage-background-color {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    pointer-events: none;
+    filter: blur(15px);
+    box-shadow:  0 0 65px #ffffff;
+    transition: transform 0.12s ease-out, background-color 0.2s, box-shadow 0.2s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+/*Custom cursor a podsvícení*/
+
+.cursor {
+    width: 0.75dvw;
+    height: 0.75dvw;
+    z-index: 9999;
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(230, 230, 230);
+    border-radius: 50%;
+    box-shadow:  0 0 3px #ffffff;
+    transition: transform 0.075s ease-out, background-color 0.3s, box-shadow 0.3s;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.hovering {
+    background-color: #f32c2c;
+    box-shadow:  0 0 3px #f32c2c;
+}
+
+/*Heropage*/
+
+.heropage {
+    min-width: 100dvw;
+    min-height: 100dvh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heropage-uvod-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40dvh;
+}
+
+.heropage-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heropage-title {
+    font-family: "DM Sans";
+    color: white;
+    font-size: 4rem;
+    z-index: 1;
+    margin: 0;
+    font-weight: 450;
+    user-select: none;
+}
+
+.heropage-podnadpis {
+    font-family: "DM Sans";
+    color: rgb(141, 141, 141);
+    font-size: 1.5rem;
+    z-index: 1;
+    font-weight: 300;
+    user-select: none;
+    background-color: rgba(60, 60, 60, 0.25);
+    padding: 15px;
+    border-radius: 40px;
+    border: solid 1px #313131;
+}
+
+.arrowdown-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 40dvh;
+    flex-direction: column;
+    animation: arrowdown-anim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+@keyframes arrowdown-anim {
+    0% {
+        translate: 0 0;
+    }
+    
+    25% {
+        translate: 0 -30px;
+    }
+    
+    50% {
+        translate: 0 0;
+    }
+    
+    100% {
+        translate: 0 0;
+    }
+}
+
+.arrowdown-icon {
+    display: block;
+    width: 65px;
+    height: 65px;
+    background-position: center;
+    background-image: url("img/arrow-down.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 200px;
+}
+
+/*Informace o mě*/
+
+.info-section {
+    min-width: 100%;
+    min-height: 140dvh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.about-me-box {
+    width: 950px;
+    height: 600px;
+    background-color: rgba(20, 20, 20, 0.25);
+    border: solid 1px #202020;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.about-me-box:hover {
+    border: solid 1px #333333;
+    box-shadow:  0 0 80px rgba(50, 50, 50, 0.2);
+}
+
+.about-me-inner-box {
+    width: 310px;
+    height: 280px;
+    background-color: rgba(30, 30, 30, 0.25);
+    border: solid 1px #1b1b1b;
+    border-radius: 25px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inner-box-large {width: 590px;}
+
+.title-inner-box {
+    font-size: 1.6rem;
+    color: #4c4c4c;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.content-inner-box {
+    font-family: "DM Sans";
+    font-size: 3rem;
+    z-index: 1;
+    margin: 0;
+    font-weight: 700;
+    user-select: none;
+}
+
+.inner-box-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 80%;
+}
+
+.inner-box-icons {
+    display: block;
+    width: 65px;
+    height: 65px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.hobby-icons {
+    width: 53px;
+    height: 53px;
+}
+
+.hobby-container {
+    gap: 13px;
+    padding-top: 8px;
+}
+
+.world-map{
+    background-image: url(img/world.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    gap: 0;
+}
+
+.location-text{
+    font-size: 3rem;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.timezone-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.green-circle {
+    width: 10px;
+    height: 10px;
+    background-color: #5dcb5f;
+    border-radius: 50%;
+}
+
+.timezone-text {
+    font-size: 1.25rem;
+}
+
+.html-icon{background-image: url(img/html.png);}
+.css-icon{background-image: url(img/css.png);}
+.js-icon{background-image: url(img/js.png);}
+.python-icon{background-image: url(img/python.png);}
+.unity-icon{background-image: url(img/unity.png);}
+.csharp-text{font-weight: 1000;}
+
+.astro-icon{background-image: url(img/telescope.png);}
+.radio-icon{background-image: url(img/radio.png);}
+.scouting-icon{background-image: url(img/tent.png);}
+.traveling-icon{background-image: url(img/mountain.png);}
+.programming-icon{background-image: url(img/laptop.png);}
+
+.gaming-icon{
+    background-image: url(img/gamepad.png);
+    transition: 0.7s;
+}
+
+.info-box {
+    width: 1000px;
+    height: 525px;
+    background-color: rgba(20, 20, 20, 0.25);
+    border: solid 1px #202020;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-box:hover {
+    border: solid 1px #333333;
+    box-shadow:  0 0 80px rgba(50, 50, 50, 0.2);
+}
+
+.info-box-start {
+    padding-top: 60px;
+    color: #757575;
+}
+
+.info-box-title {
+    max-width: 70%;
+}
+
+.info-box-text {
+    align-self: flex-start;
+    padding-left: 40px;
+    margin: 0;
+}
+
+.info-box-line {
+    width: 95%;
+    height: 1px;
+    background-color: #2f2f2f;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.info-box-maintext {
+    max-width: 60%;
+}
+
+/*Kontaktní formulář*/
+
+.contact-section {
+    min-width: 100%;
+    min-height: 70dvh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-text {
+    font-size: 1.5rem;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.name-input {
+    width: 385px;
+    padding: 15px;
+    cursor: none;
+    background-color: rgba(30, 30, 30, 0.25);
+    color: white;
+    border: solid 1px #202020;
+    border-radius: 100px;
+    transition: 0.3s;
+}
+
+.name-input:hover{
+    border: solid 1px #323232;
+    box-shadow:  0 0 80px rgba(50, 50, 50, 0.2);
+}
+
+.name-input:focus {
+    outline: none;
+    border: solid 1px #323232;
+    box-shadow:  0 0 80px rgba(50, 50, 50, 0.2);
+}
+
+.message-input {
+    width: 385px;
+    height: 100px;
+    background-color: rgba(30, 30, 30, 0.25);
+    color: white;
+    padding: 10px;
+    cursor: none;
+    border: solid 1px #202020;
+    border-radius: 25px;
+    transition: 0.3s;
+    scrollbar-width: none;
+}
+
+.message-input::-webkit-scrollbar {
+    display: none;
+}
+
+.message-input:hover{
+    border: solid 1px #323232;
+    box-shadow:  0 0 80px rgba(50, 50, 50, 0.2);
+}
+
+
+textarea.message-input {
+    resize: none;
+    padding: 15px;
+}
+
+.message-input:focus {
+    outline: none;
+    border: solid 1px #323232;
+    box-shadow:  0 0 80px rgba(50, 50, 50, 0.2);
+}
+
+.send-button {
+    width: 200px;
+    padding: 15px;
+    cursor: none;
+    background-color: rgba(30, 30, 30, 0.25);
+    color: white;
+    border-radius: 100px;
+    font-family: "DM Sans";
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px #202020;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.send-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.send-icon-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: auto;
+}
+
+.send-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/send.png);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Zápatí*/
+
+footer {
+    border-top: solid 1px #1d1c1c;
+    min-height: 30dvh;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.footer-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+
+.footer-odkazy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.footer-odkazy-title {
+    color: #4c4c4c;
+}
+
+.footer-odkazy {
+    font-family: "DM Sans";
+    color: white;
+    font-size: 1rem;
+    z-index: 1;
+    font-weight: 400;
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: none;
+}
+
+.footer-copyright {
+    font-size: 1rem;
+}
+
+.footer-odkazy:hover {
+    color: #f32c2c;
+}
+
+.gray {
+    color: #4c4c4c;
+}
+
+.back-to-top {
+    font-family: "DM Sans";
+    color: white;
+    font-size: 1rem;
+    z-index: 1;
+    font-weight: 400;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: none;
+    margin-top: 40px;
+}
+
+.back-to-top:hover {
+    color: #f32c2c;
+}
+
+.arrow-up-icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/arrow-up.png);
+}
+
+/*Stránka s koníčky*/
+
+.zajmy-section {
+    min-height: 100dvh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.konicky-container {
+    width: 1500px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-content: center;
+}
+
+.konicky-box {
+    width: 500px;
+    height: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: rgba(30, 30, 30, 0.25);
+    border: solid 2px #1b1b1b;
+    border-radius: 25px;
+    transition: 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.konicky-box:hover {
+    border: solid 2px #333333;
+    box-shadow:  0 0 80px rgba(50, 50, 50, 0.2);
+}
+
+.konicky-box-big {
+    width: 800px;
+}
+
+.konicky-box-title-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    margin-bottom: 5px;
+    transition: 0.5s;
+}
+
+.title-name {
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.title-number {
+    font-size: 3rem;
+    color: #4c4c4c;
+    margin: 0;
+}
+
+.hobby-title-icons {
+    display: block;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    justify-self: flex-end;
+    margin: 0;
+}
+
+.hobby-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.hobby-img {
+    display: block;
+    object-fit: cover;
+    width: 200px;
+    height: 140px;
+    border-radius: 10px;
+    border: solid 2px #333333;
+}
+
+/*Stránka s oblíbenými média*/
+
+.film-icon {
+    background-image: url(img/film.png)
+}
+
+.media-container {
+    width: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-content: center;
+}
+
+.media-section {
+    min-height:fit-content;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.media-box {
+    width: 500px;
+    min-height: 310px;
+    background-color: rgba(30, 30, 30, 0.25);
+    border: solid 2px #1b1b1b;
+    border-radius: 25px;
+    transition: 0.8s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 310px;
+    overflow: hidden;
+    flex-shrink: 0;
+    padding-bottom: 20px;
+}
+
+.media-box.active {
+    border: solid 2px #3a3a3a;
+    box-shadow:  0 0 80px rgba(76, 76, 76, 0.2);
+    min-height: auto;
+    max-height: 1000px;
+}
+
+.media-box.active .gaming-icon {
+    background-image: url(img/gamepad-active.png);
+}
+
+.media-box:hover {
+    border: solid 2px #333333;
+    box-shadow:  0 0 80px rgba(50, 50, 50, 0.2);
+}
+
+.media-box-title-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    margin-bottom: 5px;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+
+.media-box-big {
+    width: 800px;
+}
+
+.media-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+.media-img {
+    display: block;
+    object-fit: cover;
+    width: 140px;
+    height: 200px;
+    border-radius: 10px;
+    border: solid 2px #333333;
+}
+
+
+.disabled {
+    /*Nemá funkčnost pouze pro vypínání otevírání boxů na podstránce média*/
+    visibility: visible;
+}
+
+
+/*Začátek responzivity
+Desktop/Laptop
+*/
+
+@media screen and (max-width: 1400px) {
+    .info-section {
+        min-height: 175dvh;
+    }
+
+    .contact-section {
+        min-height: 80dvh;
+    }
+
+    .zajmy-section {
+        min-height: 120dvh;
+    }
+    
+    .konicky-box {
+        width: 400px;
+    }
+
+    .konicky-box-big {
+        width: 700px;
+    }
+
+    .hobby-img {
+        width: 160px;
+        height: 100px;
+    }
+}
+
+/*Tablet*/
+
+@media screen and (max-width: 1190px) {
+    .zajmy-section {
+        min-height: 160dvh;
+    }
+
+    .disable-aos[data-aos] {
+        opacity: 1 !important;
+        
+        transform: none !important;
+        
+        transition-delay: 0s !important;
+        transition-duration: 0s !important;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .mobile-menu-box {
+        display: flex;
+    }
+
+    header {
+        display: none;
+    }
+
+    .about-me-box {
+        width: 800px;
+        height: 400px;
+    }
+
+    .about-me-inner-box {
+        width: 210px;
+        height: 190px;
+    }
+
+    .inner-box-large {
+        width: 490px;
+    }
+
+    .inner-box-icons {
+        width: 52px;
+        height: 52px;
+    }
+
+    .hobby-icons {
+        width: 40px;
+        height: 40px;
+    }
+
+    .title-inner-box {
+        font-size: 1.3rem;
+    }
+
+    .content-inner-box {
+        font-size: 2.5rem;
+    }
+
+    .info-box {
+        width: 800px;
+        height: 450px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    footer {
+        min-height: 40dvh;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .info-section {
+        min-height: 185dvh;
+    }
+    
+    .contact-section {
+        min-height: 90dvh;
+    }
+    
+    .heropage-title {
+        font-size: 3.4rem;
+    }
+    
+    .heropage-podnadpis {
+        font-size: 1.3rem;
+    }
+    
+    .about-me-box {
+        width: 650px;
+        height: 700px;
+    }
+    
+    .info-box {
+        width: 700px;
+    }
+    
+    .konicky-container {
+        width: 80dvw;
+        height: 240dvh;
+    }
+    
+    .konicky-box {
+        width: 700px;
+    }
+    
+    .media-box-big {
+        width: 600px;
+    }
+    
+    .media-box {
+        max-height: 290px;
+        min-height: 290px;
+    }
+    
+    .title-name {
+        font-size: 1.4rem;
+    }
+    
+    .title-number {
+        font-size: 2.5rem;
+    }
+    
+    .hobby-title-icons {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .mobile-menu {
+        width: 45dvw;
+    }
+    
+    .heropage-title {
+        font-size: 3rem;
+    }
+    
+    .about-me-box {
+        width: 500px;
+    }
+    
+    .info-box {
+        width: 600px;
+    }
+    
+    .title {
+        font-size: 1.75rem;
+    }
+    
+    .send-button {
+        padding: 12px;
+    }
+    
+    .konicky-box {
+        width: 575px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .heropage-title {
+        font-size: 2.5rem;
+    }
+    
+    .heropage-podnadpis {
+        font-size: 1.1rem;
+    }
+    
+    .mobile-menu {
+        width: 50dvw;
+    }
+    
+    .arrowdown-icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .about-me-inner-box {
+        width: 185px;
+        height: 170px;
+    }
+    
+    .inner-box-large {
+        width: 420px;
+    }
+    
+    .about-me-box {
+        width: 450px;
+        height: 600px;
+    }
+    
+    .location-text {
+        font-size: 2.25rem;
+    }
+    
+    .content-inner-box {
+        font-size: 2.25rem;
+    }
+    
+    .title-inner-box {
+        font-size: 1.1rem;
+    }
+    
+    .inner-box-icons {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .hobby-icons {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .info-box {
+        width: 550px;
+        height: 475px;
+    }
+    
+    .title {
+        font-size: 1.6rem;
+    }
+    
+    .contact-section {
+        min-height: 100dvh;
+    }
+    
+    .konicky-box {
+        width: 480px;
+    }
+    
+    .hobby-img-container {
+        flex-wrap: wrap
+    }
+    
+    .zajmy-section {
+        min-height: 300dvh;
+    }
+    
+    .media-box-big {
+        width: 500px;
+    }
+    
+    .title-name {
+        font-size: 1.1rem;
+    }
+    
+    .title-number {
+        font-size: 2rem;
+    }
+    
+    .media-box-title-container {
+        width: 90%;
+        gap: 10px;
+    }
+    
+    .media-img {
+        width: 120px;
+        height: 180px;
+    }
+    
+    .media-box {
+        min-height: 270px;
+        max-height: 270px;
+    }
+    
+    .media-section  {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .heropage-title {
+        font-size: 2rem;
+    }
+
+    .heropage-podnadpis {
+        font-size: 1rem;
+    }
+
+    .arrowdown-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .about-me-box {
+        width: 400px;
+        height: 550px;
+    }
+    
+    .info-box {
+        width: 440px;
+        height: 550px;
+    }
+
+    .info-box-text {
+        align-self: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .info-box-title {
+        align-self: center;
+        padding-left: 0;
+    }
+
+    .info-box-start {
+        padding-top: 40px;
+    }
+
+    .info-section {
+        min-height: 170dvh;
+    }
+
+    .contact-section {
+        min-height: 90dvh;
+    }
+
+    .konicky-box {
+        width: 450px;
+    }
+
+    .zajmy-section {
+        min-height: 250dvh;
+    }
+    
+    .media-box-big {
+        width: 425px;
+    }
+
+    .title-name {
+        font-size: 1rem;
+    }
+
+    .media-box.active {
+        max-height: 5000px;
+    }
+}
+
+/*Mobil*/
+
+@media screen and (max-width: 465px) {
+    .content-inner-box {
+        font-size: 1.4rem;
+    }
+    
+    .about-me-inner-box {
+        width: 250px;
+    }
+
+    .about-me-box {
+        width: 275px;
+        height: 770px;
+    }
+
+    .location-text {
+        font-size: 1.4rem;
+    }
+    
+    .timezone-text {
+        font-size: 1.1rem;
+    }
+
+    .info-box {
+        width: 325px;
+        height: 500px;
+    }
+
+    .info-box-maintext {
+        max-width: 80%;
+    }
+
+    .info-box-title {
+        max-width: 90%;
+        font-size: 1.4rem;;
+    }
+
+    .name-input {
+        width: 340px;
+    }
+
+    .message-input {
+        width: 340px;
+    }
+
+    .footer-horizontal {
+        gap: 100px;
+    }
+
+    .mobile-menu {
+        width: 60dvw;
+    }
+
+    .konicky-box {
+        width: 325px;
+    }
+
+    .title-number {
+        font-size: 1.7rem;
+    }
+
+    .hobby-title-icons {
+        width: 35px;
+        height: 35px;
+    }
+
+    .title-name {
+        font-size: 0.85rem;
+    }
+
+    .konicky-box-title-container {
+        gap: 10px;
+    }
+
+    .media-box-big {
+        width: 350px;
+    }
+
+    .heropage-title {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .media-box {
+        min-height: 250px;
+        max-height: 250px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .mobile-menu {
+        width: 70dvw;
+    }
+
+    .name-input {
+        width: 275px;
+    }
+
+    .message-input {
+        width: 275px;
+    }
+
+    .footer-horizontal {
+        gap: 50px;
+    }
+
+    .footer-copyright {
+        font-size: 0.9rem;
+    }
+
+    .info-box-title {
+        font-size: 1.3rem;
+    }
+
+    .media-box-big {
+        width: 300px;
+    }
+
+    .media-img {
+        width: 100px;
+        height: 160px;
+    }
+
+    .media-box {
+        min-height: 230px;
+        max-height: 230px;
+    }
+
+    .title-number {
+        display: none;
+    }
+
+    .hobby-title-icons {
+        display: none;
+    }
+
+    .media-box-title-container {
+        justify-content: center;
+        padding-top: 10px;
+    }
+
+    .konicky-box-title-container {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .about-me-box {
+        width: 200px;
+    }
+    
+    .content-inner-box {
+        font-size: 1.1rem;;
+    }
+
+    .location-text {
+        font-size: 1.1rem;
+    }
+
+    .timezone-text {
+        font-size: 1rem;
+    }
+
+    .info-box {
+        width: 250px;
+        height: 440px;
+    }
+
+    .info-box-title {
+        font-size: 1.1rem;
+        max-width: 85%;
+    }
+
+    .info-box-text {
+        font-size: 0.9rem;
+    }
+
+    .info-box-line {
+        width: 90%;
+    }
+
+    .name-input {
+        width: 225px;
+    }
+
+    .message-input {
+        width: 225px;
+    }
+
+    .back-to-top {
+        display: none;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+
+    .mobile-menu-box {
+        width: 70px;
+        height: 70px;
+    }
+
+    .konicky-box {
+        width: 230px;
+    }
+
+    .zajmy-section {
+        min-height: 230dvh;
+    }
+
+    .media-box-big {
+        width: 250px;
+    }
+
+    .media-img {
+        width: 90px;
+        height: 150px;
+    }
+
+        .media-box {
+        min-height: 220px;
+        max-height: 220px;
+    }
+
+}
