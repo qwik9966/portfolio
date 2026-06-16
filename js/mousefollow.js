@@ -5,7 +5,7 @@ const Cursor = document.getElementById("cursor");
 const HeropageBackground = document.getElementById("HeropageBackground");
 
 /*Vypnutí kurzoru a podsvícení na dotykových zařízení*/
-if (navigator.maxTouchPoints > 1) {
+if (navigator.maxTouchPoints > 2) {
     Cursor.style.display = "none"
     HeropageBackground.style.display = "none"
 }
